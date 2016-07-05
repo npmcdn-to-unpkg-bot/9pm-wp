@@ -24,8 +24,8 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 */
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Crimson Text', sans-serif;
   font-size: 14px;
   font-weight: 400;
-  /*line-height: 1.5em;*/
+  line-height: 1.5em;
 }
