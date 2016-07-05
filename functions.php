@@ -15,7 +15,10 @@ function blankslate_setup()
 add_action( 'wp_enqueue_scripts', 'blankslate_add_stylesheet' );
 function blankslate_add_stylesheet()
 {
-  wp_enqueue_style( 'grid', get_stylesheet_directory_uri().'/grid.css' );
+  wp_enqueue_style( 'grid', get_stylesheet_directory_uri().'/grid.css', false );
+  wp_enqueue_style( 'crimson', 'https://fonts.googleapis.com/css?family=Crimson+Text:400,700', false );
+  wp_enqueue_style( 'lato', 'https://fonts.googleapis.com/css?family=Lato:400,300,700', false );
+
 }
 add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
 function blankslate_load_scripts()
