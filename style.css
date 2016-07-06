@@ -25,7 +25,92 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 body {
   font-family: 'Crimson Text', sans-serif;
-  font-size: 14px;
   font-weight: 400;
-  line-height: 1.5em;
+  font-size: 16px;
+  line-height: 1.5rem;
+  color: #404040;
 }
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+h1, h2, h3, h4, h5, h6 { 
+  line-height: 100%; 
+  /*font-family: 'Lato', sans-serif;*/
+}
+
+section {
+  padding: 3rem 0;
+}
+
+section#branding {
+  background: url(images/9pm_logo_paper.png) no-repeat 50% 30%;
+  background-size: cover;
+  height: 480px;
+  position: relative;
+  border-bottom: 1px solid #eee;
+}
+
+section#branding>.overlay {
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  width: 100%;
+}
+
+section#branding h6 {
+  /*font-family: "Crimson Text";*/
+  margin-top: 1.75rem;
+  line-height: 1.25rem;
+  letter-spacing: 1px;
+}
+
+section h1 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #2b2b2b;
+}
+
+section h1:before {
+  content: "";
+  display: block;
+  width: 10rem;
+  height: 0.1rem;
+  background-color: #000;
+  margin-bottom: 1rem;
+}
+
+section#work {
+  border-bottom: 1px solid #eee;
+}
+
+.masonry {
+  margin-top: 1.75rem;
+}
+
+.masonry>.grid-item>img {
+  width: 100%;
+  display: block;
+}
+
+.masonry:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* fluid 5 columns */
+.grid-sizer,
+.grid-item {
+  width: 20%;
+}
+.grid-item--width2 { width:  40%; }
+.grid-item--width3 { width:  60%; }
+
+.grid-item--height2 { height: 200px; }
+.grid-item--height3 { height: 260px; }
+.grid-item--height4 { height: 360px; }

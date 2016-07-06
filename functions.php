@@ -24,7 +24,11 @@ function blankslate_add_stylesheet()
 add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
 function blankslate_load_scripts()
 {
-  wp_enqueue_script( 'jquery' );
+  wp_enqueue_script( 'jquery2', 'https://code.jquery.com/jquery-2.2.4.min.js' );
+  wp_enqueue_script( 'masonry', 'https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js', array('jquery2') );
+  wp_enqueue_script( 'image-loaded', get_stylesheet_directory_uri().'/js/imagesloaded.js' );
+  wp_register_script( 'app', get_stylesheet_directory_uri().'/js/app.js', array('jquery2', 'masonry', 'image-loaded'), true );
+  wp_enqueue_script( 'app' );
 }
 
 add_action( 'comment_form_before', 'blankslate_enqueue_comment_reply_script' );

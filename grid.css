@@ -27,7 +27,7 @@
 
 .grid {
   width: 100%;
-  /*max-width: 1140px;*/
+  max-width: 1140px;
   min-width: 748px; /* when using padded grid on ipad in portrait mode, width should be viewport-width - padding = (768 - 20) = 748. actually, it should be even smaller to allow for padding of grid containing element */
   margin: 0 auto;
   overflow: hidden;
@@ -37,6 +37,10 @@
   content: "";
   display: table;
   clear: both;
+}
+
+.grid.expanded {
+  max-width: 100%;
 }
 
 .grid-pad {
@@ -187,7 +191,7 @@
   [class*='col-'] {
     width: auto;
     float: none;
-    margin: 10px 0;
+    /*margin: 10px 0;*/
     padding-left: 0;
     padding-right: 10px; /* column-space */
   }
@@ -200,7 +204,7 @@
 
   [class*='mobile-col-'] {
     float: left;
-    margin: 0 0 10px;
+    /*margin: 0 0 10px;*/
     padding-left: 0;
     padding-right: 10px; /* column-space */
     padding-bottom: 0;
