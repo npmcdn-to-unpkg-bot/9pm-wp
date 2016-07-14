@@ -43,6 +43,8 @@ h1, h2, h3, h4, h5, h6 {
   /*font-family: 'Lato', sans-serif;*/
 }
 
+/* sections */
+
 section {
   padding: 3rem 0;
 }
@@ -85,9 +87,13 @@ section h1:before {
   margin-bottom: 1rem;
 }
 
-section#work {
+section#work,
+section#services {
   border-bottom: 1px solid #eee;
 }
+
+
+/* project list */
 
 .masonry {
   margin-top: 1.75rem;
@@ -110,7 +116,65 @@ section#work {
 }
 .grid-item--width2 { width:  40%; }
 .grid-item--width3 { width:  60%; }
+.grid-item--width5 { width:  100%; }
 
 .grid-item--height2 { height: 200px; }
 .grid-item--height3 { height: 260px; }
 .grid-item--height4 { height: 360px; }
+
+
+/* services */
+.services-item {
+  margin: 0.75rem 0;
+}
+
+.services-item>h2 {
+  line-height: 1;
+  padding: 0 0 0.5em;
+}
+
+.services-item>p {
+  line-height: 1.5;
+}
+
+/* crew */
+#crew-list {
+
+}
+
+#crew-list>.crew-member {
+  margin: 0.75rem 0;
+}
+
+#crew-list>.crew-member>.overlay-container {
+  position: relative;
+  margin: 0 0 0.5rem;
+}
+
+#crew-list>.crew-member>.overlay-container img {
+  width: 100%;
+  display: block;
+}
+
+#crew-list>.crew-member>.overlay-container:hover img:nth-child(2) {
+  display: block;
+}
+
+#crew-list>.crew-member>.overlay-container img:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#crew-list>.crew-member>.blurb>h6 {
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+#crew-list>.crew-member>.blurb>p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+/* footer */
+

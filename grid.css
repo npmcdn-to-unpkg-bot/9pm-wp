@@ -21,7 +21,7 @@
   padding-right: 20px; /* column-space */
 }
 
-[class*='col-']:last-child {
+[class*='col-'] [class*='col-']:last-child {
   padding-right: 0;
 }
 
