@@ -1,5 +1,7 @@
+<?php get_header(); ?>
 <!-- branding section -->
 <section id="branding">
+  <div class="bg"></div>
   <div class="overlay">
     <div class="grid grid-pad">
       <div class="push-1-4 col-1-2 mobile-col-1-1">
@@ -79,8 +81,8 @@
   <ul class="grid grid-pad" id="crew-list">
     <li class="col-1-5 mobile-col-1-2 crew-member">
       <div class="overlay-container">
-        <img src="http://placehold.it/300?text=1">
-        <img src="http://placehold.it/300?text=2">
+        <img src="<?php echo get_stylesheet_directory_uri() . '/images/crew/zac_01.jpg' ?>">
+        <img src="<?php echo get_stylesheet_directory_uri() . '/images/crew/zac_02.jpg' ?>">
       </div>
       <div class="blurb">
         <h6>Zachary</h6>
@@ -90,8 +92,8 @@
     </li>
     <li class="col-1-5 mobile-col-1-2 crew-member">
       <div class="overlay-container">
-        <img src="http://placehold.it/300?text=1">
-        <img src="http://placehold.it/300?text=2">
+        <img src="<?php echo get_stylesheet_directory_uri() . '/images/crew/yuki_01.jpg' ?>">
+        <img src="<?php echo get_stylesheet_directory_uri() . '/images/crew/yuki_02.jpg' ?>">
       </div>
       <div class="blurb">
         <h6>Yuki</h6>
@@ -101,8 +103,8 @@
     </li>
     <li class="col-1-5 mobile-col-1-2 crew-member">
       <div class="overlay-container">
-        <img src="http://placehold.it/300?text=1">
-        <img src="http://placehold.it/300?text=2">
+        <img src="<?php echo get_stylesheet_directory_uri() . '/images/crew/aries_01.jpg' ?>">
+        <img src="<?php echo get_stylesheet_directory_uri() . '/images/crew/aries_02.jpg' ?>">
       </div>
       <div class="blurb">
         <h6>Aries</h6>
@@ -112,8 +114,8 @@
     </li>
     <li class="col-1-5 mobile-col-1-2 crew-member">
       <div class="overlay-container">
-        <img src="http://placehold.it/300?text=1">
-        <img src="http://placehold.it/300?text=2">
+        <img src="<?php echo get_stylesheet_directory_uri() . '/images/crew/zac_01.jpg' ?>">
+        <img src="<?php echo get_stylesheet_directory_uri() . '/images/crew/zac_02.jpg' ?>">
       </div>
       <div class="blurb">
         <h6>Patrick</h6>
@@ -123,8 +125,8 @@
     </li>
     <li class="col-1-5 mobile-col-1-2 crew-member">
       <div class="overlay-container">
-        <img src="http://placehold.it/300?text=1">
-        <img src="http://placehold.it/300?text=2">
+        <img src="<?php echo get_stylesheet_directory_uri() . '/images/crew/yao_01.jpg' ?>">
+        <img src="<?php echo get_stylesheet_directory_uri() . '/images/crew/yao_02.jpg' ?>">
       </div>
       <div class="blurb">
         <h6>Yan</h6>

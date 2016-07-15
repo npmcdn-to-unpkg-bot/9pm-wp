@@ -50,11 +50,19 @@ section {
 }
 
 section#branding {
-  background: url(images/9pm_logo_paper.png) no-repeat 50% 30%;
-  background-size: cover;
-  height: 480px;
   position: relative;
   border-bottom: 1px solid #eee;
+  padding: 0;
+}
+
+section#branding>.bg {
+  /*background: url(images/9pm_logo_paper.png) no-repeat 50% 30%;*/
+  background: url(images/9pm_logo_paper.svg) no-repeat 50% 30%;
+  -webkit-filter: drop-shadow(2px -2px 10px rgba(0,0,0,0.15)); 
+  filter: drop-shadow(2px -2px 10px rgba(0,0,0,0.15));
+  background-size: cover;
+  height: 480px;
+
 }
 
 section#branding>.overlay {
