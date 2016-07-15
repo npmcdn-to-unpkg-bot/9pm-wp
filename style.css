@@ -96,13 +96,13 @@ section h1:before {
 }
 
 section#work,
-section#services {
+section#services,
+section#crew {
   border-bottom: 1px solid #eee;
 }
 
 
 /* project list */
-
 .masonry {
   margin-top: 1.75rem;
 }
@@ -145,6 +145,7 @@ section#services {
   line-height: 1.5;
 }
 
+
 /* crew */
 #crew-list {
 
@@ -184,5 +185,13 @@ section#services {
   font-size: 0.9rem;
   line-height: 1.5;
 }
-/* footer */
 
+
+/* footer */
+footer {
+  padding-bottom: 20px;
+}
+
+footer #copyright {
+  /*text-align: center;*/
+}
