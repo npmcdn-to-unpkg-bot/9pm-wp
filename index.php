@@ -141,6 +141,52 @@
       </div>
     </li>
   </ul>
+
+  <div class="grid grid-pad" id="we-are">
+    <div class="col-1-3 push-1-3">
+        <div class="col-1-2 mobile-col-1-2 text-right">
+          <h4>We are</h4>
+        </div>
+        <div class="col-1-2 mobile-col-1-2">
+          <h4 class="strike">Lazy</h4>
+          <h4>Efficient</h4>
+          <br>
+          <h4 class="strike">Crazy</h4>
+          <h4>Creative</h4>
+          <br>
+          <h4 class="strike">Sentimental</h4>
+          <h4>Empathetic</h4>
+        </div>
+
+        <div class="col-1-2 mobile-col-1-2 text-right">
+          <h4>We make</h4>
+        </div>
+        <div class="col-1-2 mobile-col-1-2">
+          <h4 class="strike">Coffee</h4>
+          <h4>Conversation</h4>
+          <br>
+          <h4 class="strike">Prints</h4>
+          <h4>Visual experience</h4>
+          <br>
+          <h4 class="strike">Rock</h4>
+          <h4>Interaction</h4>
+        </div>
+
+        <div class="col-1-2 mobile-col-1-2 text-right">
+          <h4>We love</h4>
+        </div>
+        <div class="col-1-2 mobile-col-1-2">
+          <h4 class="strike">Travelling</h4>
+          <h4>Exploration</h4>
+          <br>
+          <h4 class="strike">Crafting</h4>
+          <h4>Innovation</h4>
+          <br>
+          <h4 class="strike">Ourselves</h4>
+          <h4 style="text-transform:none;font-style:italic;">and You.</h4>
+        </div>
+    </div>
+  </div>
 </section>
 
 

@@ -210,6 +210,10 @@
     padding-bottom: 0;
   }
 
+  [class*='push-'] {
+    margin-left: 0;
+  }
+
   .mobile-col-1-1 {
     width: 100%;
   }

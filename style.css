@@ -49,6 +49,10 @@ a:focus,
 a:visited {
   color: #404040;
 }
+/* text helpers */
+.text-center {text-align: center}
+.text-left {text-align: left}
+.text-right {text-align: right}
 
 /* sections */
 
@@ -237,6 +241,25 @@ section#crew {
 #crew-list>.crew-member>.blurb>p {
   font-size: 0.9rem;
   line-height: 1.5;
+}
+
+#we-are {margin-top: 2rem;}
+
+#we-are .text-right {
+  padding-right: 2rem;
+}
+
+#we-are h4 {
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+#we-are h4.strike { text-decoration: line-through; }
+
+#we-are .text-right>h4 {
+  font-style: italic;
+  font-weight: 100;
 }
 
 
