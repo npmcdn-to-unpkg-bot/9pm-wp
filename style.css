@@ -130,6 +130,36 @@ section#crew {
 .grid-item--height3 { height: 260px; }
 .grid-item--height4 { height: 360px; }
 
+.work-item {
+  position: relative;
+}
+
+.work-overlay {
+  position: absolute;
+  /*top: 0;*/
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255, 0.9);
+
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.work-item:hover .work-overlay {
+  bottom: 0;
+}
+
+.work-overlay>h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.5;
+}
 
 /* services */
 .services-item {
@@ -166,14 +196,21 @@ section#crew {
 }
 
 #crew-list>.crew-member>.overlay-container:hover img:nth-child(2) {
-  display: block;
+  /*display: block;*/
+  opacity: 1;
 }
 
 #crew-list>.crew-member>.overlay-container img:nth-child(2) {
   position: absolute;
   top: 0;
   left: 0;
-  display: none;
+  display: block;
+  opacity: 0;
+
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
 }
 
 #crew-list>.crew-member>.blurb>h6 {
