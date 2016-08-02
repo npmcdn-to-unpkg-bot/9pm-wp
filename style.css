@@ -137,6 +137,12 @@ section#crew {
 .grid-item--height3 { height: 260px; }
 .grid-item--height4 { height: 360px; }
 
+@media handheld, only screen and (max-width: 480px) {
+  .grid-item--width2 { width:  100%; }
+  .grid-item--width3 { width:  100%; }
+  .grid-item--width5 { width:  100%; }
+}
+
 .work-item {
   position: relative;
   display: block;
@@ -145,6 +151,7 @@ section#crew {
 .work-overlay {
   position: absolute;
   /*top: 0;*/
+  opacity: 0;
   bottom: -100%;
   left: 0;
   width: 100%;
@@ -159,6 +166,7 @@ section#crew {
 
 .work-item:hover .work-overlay {
   bottom: 0;
+  opacity: 1;
 }
 
 .work-overlay>h3 {
