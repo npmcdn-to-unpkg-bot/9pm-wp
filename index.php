@@ -22,30 +22,30 @@
     <div class="col-1-1 mobile-col-1-1">
       <div class="masonry" id="work-container">
         <div class="grid-sizer"></div>
-        <div class="grid-item  work-item grid-item--width3">
+        <a href class="grid-item  work-item grid-item--width3">
           <div class="work-overlay"><h3>Dope Project</h3></div>
           <img src="<?php echo get_template_directory_uri() . '/images/work/02.jpg' ?>" alt />
-        </div>
-        <div class="grid-item  work-item grid-item--width3">
+        </a>
+        <a href class="grid-item work-item grid-item--width3">
           <div class="work-overlay"><h3>Dope Project</h3></div>
           <img src="<?php echo get_template_directory_uri() . '/images/work/04.jpg' ?>" alt />
-        </div>
-        <div class="grid-item  work-item grid-item--width2">
+        </a>
+        <a href class="grid-item work-item grid-item--width2">
           <div class="work-overlay"><h3>Dope Project</h3></div>
           <img src="<?php echo get_template_directory_uri() . '/images/work/03.jpg' ?>" alt />
-        </div>
-        <div class="grid-item  work-item grid-item--width2">
+        </a>
+        <a href class="grid-item work-item grid-item--width2">
           <div class="work-overlay"><h3>Dope Project</h3></div>
           <img src="<?php echo get_template_directory_uri() . '/images/work/05.jpg' ?>" alt />
-        </div>
-        <div class="grid-item  work-item grid-item--width3">
+        </a>
+        <a href class="grid-item work-item grid-item--width3">
           <div class="work-overlay"><h3>Dope Project</h3></div>
           <img src="<?php echo get_template_directory_uri() . '/images/work/06.jpg' ?>" alt />
-        </div>
-        <div class="grid-item  work-item grid-item--width2">
+        </a>
+        <a href class="grid-item work-item grid-item--width2">
           <div class="work-overlay"><h3>Long Ass Name Project That No One Gives A Shit!</h3></div>
           <img src="<?php echo get_template_directory_uri() . '/images/work/01.jpg' ?>" alt />
-        </div>
+        </a>
       </div>
   </div>
   </div>
@@ -120,8 +120,8 @@
     </li>
     <li class="col-1-5 mobile-col-1-2 crew-member">
       <div class="overlay-container">
-        <img src="<?php echo get_stylesheet_directory_uri() . '/images/crew/zac_01.jpg' ?>">
-        <img src="<?php echo get_stylesheet_directory_uri() . '/images/crew/zac_02.jpg' ?>">
+        <img src="<?php echo get_stylesheet_directory_uri() . '/images/crew/pj_01.jpg' ?>">
+        <img src="<?php echo get_stylesheet_directory_uri() . '/images/crew/pj_02.jpg' ?>">
       </div>
       <div class="blurb">
         <h6>Patrick</h6>

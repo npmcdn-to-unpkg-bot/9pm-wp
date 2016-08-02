@@ -43,6 +43,13 @@ h1, h2, h3, h4, h5, h6 {
   /*font-family: 'Lato', sans-serif;*/
 }
 
+a,
+a:hover,
+a:focus,
+a:visited {
+  color: #404040;
+}
+
 /* sections */
 
 section {
@@ -132,6 +139,7 @@ section#crew {
 
 .work-item {
   position: relative;
+  display: block;
 }
 
 .work-overlay {
