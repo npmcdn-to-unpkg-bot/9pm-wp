@@ -10,6 +10,10 @@
       </div>
     </div>
   </div>
+
+  <a href="#" class="menu-trigger">
+    <i class="burger"></i>
+  </a>
 </section>
 <!-- end branding section -->
 
