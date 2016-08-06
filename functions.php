@@ -116,41 +116,24 @@ function custom_post_gallery($output, $attr) {
 
   // Validate the author's orderby attribute
   if ( ! empty( $attr['ids'] ) ) {
-      // 'ids' is explicitly ordered, unless you specify otherwise.
-      if ( empty( $attr['orderby'] ) ) {
-          $attr['orderby'] = 'post__in';
-      }
-      $attr['include'] = $attr['ids'];
+    // 'ids' is explicitly ordered, unless you specify otherwise.
+    if ( empty( $attr['orderby'] ) ) {
+        $attr['orderby'] = 'post__in';
+    }
+    $attr['include'] = $attr['ids'];
   }
 
-  // Get attributes from shortcode
-
-  // $html5 = current_theme_supports( 'html5', 'gallery' );
-  // $atts = shortcode_atts( array(
-  //     'order'      => 'ASC',
-  //     'orderby'    => 'menu_order ID',
-  //     'id'         => $post ? $post->ID : 0,
-  //     'itemtag'    => $html5 ? 'ul'     : 'ul',
-  //     'icontag'    => $html5 ? 'li'        : 'li',
-  //     'captiontag' => $html5 ? 'figcaption' : 'dd',
-  //     'columns'    => 3,
-  //     'size'       => 'thumbnail',
-  //     'include'    => '',
-  //     'exclude'    => '',
-  //     'link'       => ''
-  // ), $attr, 'gallery' );
-
   extract( shortcode_atts( array(
-      'order'      => 'ASC',
-      'orderby'    => 'menu_order ID',
-      'id'         => $post->ID,
-      'itemtag'    => 'ul',
-      'icontag'    => 'li',
-      'captiontag' => 'dd',
-      'columns'    => 3,
-      'size'       => 'full',
-      'include'    => '',
-      'exclude'    => ''
+    'order'      => 'ASC',
+    'orderby'    => 'menu_order ID',
+    'id'         => $post->ID,
+    'itemtag'    => 'ul',
+    'icontag'    => 'li',
+    'captiontag' => 'dd',
+    'columns'    => 3,
+    'size'       => 'full',
+    'include'    => '',
+    'exclude'    => ''
   ), $attr ) );
 
   // Initialize
@@ -196,17 +179,34 @@ function custom_post_gallery($output, $attr) {
   $float = is_rtl() ? 'right' : 'left';
   $selector = "gallery-{$instance}";
 
-  $output = "<div id='$selector' class='flexslider'><{$itemtag} class='slides'>";
+  $output = "<div id='$selector'><{$itemtag} class='masonry'>";
+  $output .= "<{$icontag} class='grid-sizer'></{$icontag}>";
 
   // Iterate through the attachments in this gallery instance
-  $i = 0;
+  $counter = 1;
   foreach ( $attachments as $id => $attachment ) {
+      $img_width = wp_get_attachment_metadata( $id )["width"];
+      $img_height = wp_get_attachment_metadata( $id )["height"];
+      $img_class = '';
+      // $rand_arr = ['2', '3', '5'];
+      
+      // $img_class = "grid-item--width{$rand_arr[rand(0,2)]}";
+
+      if (($counter - 1) % 3 == 0) {
+        $img_class = "grid-item--width3";
+      } 
+      else {
+        $img_class = "grid-item--width2";
+      }
+
+      $counter++;
+
       // Image link
       $link = wp_get_attachment_image_src( $attachment->ID, $size );
 
       // icontag
       $output .= "
-      <{$icontag}>
+      <{$icontag} class='grid-item {$img_class}'>
           <img src={$link[0]}>
       </{$icontag}>";
 
