@@ -188,9 +188,6 @@ function custom_post_gallery($output, $attr) {
       $img_width = wp_get_attachment_metadata( $id )["width"];
       $img_height = wp_get_attachment_metadata( $id )["height"];
       $img_class = '';
-      // $rand_arr = ['2', '3', '5'];
-      
-      // $img_class = "grid-item--width{$rand_arr[rand(0,2)]}";
 
       if (($counter - 1) % 3 == 0) {
         $img_class = "grid-item--width3";

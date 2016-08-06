@@ -6,6 +6,10 @@ get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 <section class="project-container">
+  <a href="#" class="menu-trigger">
+    <i class="burger"></i>
+  </a>
+  
   <div class="grid grid-pad">
     <div class="col-1-1 mobile-col-1-1">
       <h1><?php echo the_title(); ?></h1>

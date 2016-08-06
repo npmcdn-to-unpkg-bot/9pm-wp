@@ -340,3 +340,14 @@ footer {
 }
 
 footer #copyright {}
+
+
+/* project page*/
+
+.project-container {
+  position: relative;
+}
+
+.project-description>p {
+  margin: 0.75rem 0;
+}
