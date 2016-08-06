@@ -82,3 +82,149 @@ function blankslate_comments_number( $count )
     return $count;
   }
 }
+
+// custom post type
+function project_init() {
+    $args = array(
+        'label' => 'Project',
+        'public'    =>  true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'work' ),
+        'capability_type'    => 'post',
+        'has_archive'        => false,
+        'hierarchical'       => false,
+        'menu_position'      => 2,
+        'menu_icon'          => 'dashicons-art',
+        'supports'           => array( 'title', 'editor', 'revisions', 'thumbnail' ),
+        'taxonomies'         => array( 'category' )
+    );
+
+    register_post_type( 'project', $args );
+}
+add_action( 'init', 'project_init' );
+
+// custom gallery
+function custom_post_gallery($output, $attr) {
+  // Initialize
+  global $post, $wp_locale;
+
+  // Gallery instance counter
+  static $instance = 0;
+  $instance++;
+
+  // Validate the author's orderby attribute
+  if ( ! empty( $attr['ids'] ) ) {
+      // 'ids' is explicitly ordered, unless you specify otherwise.
+      if ( empty( $attr['orderby'] ) ) {
+          $attr['orderby'] = 'post__in';
+      }
+      $attr['include'] = $attr['ids'];
+  }
+
+  // Get attributes from shortcode
+
+  // $html5 = current_theme_supports( 'html5', 'gallery' );
+  // $atts = shortcode_atts( array(
+  //     'order'      => 'ASC',
+  //     'orderby'    => 'menu_order ID',
+  //     'id'         => $post ? $post->ID : 0,
+  //     'itemtag'    => $html5 ? 'ul'     : 'ul',
+  //     'icontag'    => $html5 ? 'li'        : 'li',
+  //     'captiontag' => $html5 ? 'figcaption' : 'dd',
+  //     'columns'    => 3,
+  //     'size'       => 'thumbnail',
+  //     'include'    => '',
+  //     'exclude'    => '',
+  //     'link'       => ''
+  // ), $attr, 'gallery' );
+
+  extract( shortcode_atts( array(
+      'order'      => 'ASC',
+      'orderby'    => 'menu_order ID',
+      'id'         => $post->ID,
+      'itemtag'    => 'ul',
+      'icontag'    => 'li',
+      'captiontag' => 'dd',
+      'columns'    => 3,
+      'size'       => 'full',
+      'include'    => '',
+      'exclude'    => ''
+  ), $attr ) );
+
+  // Initialize
+  $id = intval( $id );
+  $attachments = array();
+  if ( $order == 'RAND' ) $orderby = 'none';
+
+  if ( ! empty( $include ) ) {
+
+      // Include attribute is present
+      $include = preg_replace( '/[^0-9,]+/', '', $include );
+      $_attachments = get_posts( array( 'include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby ) );
+
+      // Setup attachments array
+      foreach ( $_attachments as $key => $val ) {
+          $attachments[ $val->ID ] = $_attachments[ $key ];
+      }
+
+  } else if ( ! empty( $exclude ) ) {
+
+      // Exclude attribute is present 
+      $exclude = preg_replace( '/[^0-9,]+/', '', $exclude );
+
+      // Setup attachments array
+      $attachments = get_children( array( 'post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby ) );
+  } else {
+      // Setup attachments array
+      $attachments = get_children( array( 'post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby ) );
+  }
+
+  if ( empty( $attachments ) ) return '';
+
+  // Filter gallery differently for feeds
+  if ( is_feed() ) {
+      $output = "\n";
+      foreach ( $attachments as $att_id => $attachment ) $output .= wp_get_attachment_link( $att_id, $size, true ) . "\n";
+      return $output;
+  }
+
+  // Filter tags and attributes
+  $itemtag = tag_escape( $itemtag );
+  $captiontag = tag_escape( $captiontag );
+  $float = is_rtl() ? 'right' : 'left';
+  $selector = "gallery-{$instance}";
+
+  $output = "<div id='$selector' class='flexslider'><{$itemtag} class='slides'>";
+
+  // Iterate through the attachments in this gallery instance
+  $i = 0;
+  foreach ( $attachments as $id => $attachment ) {
+      // Image link
+      $link = wp_get_attachment_image_src( $attachment->ID, $size );
+
+      // icontag
+      $output .= "
+      <{$icontag}>
+          <img src={$link[0]}>
+      </{$icontag}>";
+
+      if ( $captiontag && trim( $attachment->post_excerpt ) ) {
+          // captiontag
+          $output .= "
+          <{$captiontag} class='gallery-caption'>
+              " . wptexturize($attachment->post_excerpt) . "
+          </{$captiontag}>";
+      }
+  }
+  // End itemtag
+  $output .= "</{$itemtag}>";
+
+  // End gallery output
+  $output .= "</div>";
+
+  return $output;
+}
+
+add_filter( 'post_gallery', 'custom_post_gallery', 10, 2 );

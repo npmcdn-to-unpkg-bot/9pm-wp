@@ -7,4 +7,6 @@ $(document).ready(function(){
       percentPosition: true
     });
   });
+
+  $('.menu-trigger').click(function(e){ $(this).toggleClass('is-open') });
 });
