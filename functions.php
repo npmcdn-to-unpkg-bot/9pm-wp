@@ -180,21 +180,28 @@ function custom_post_gallery($output, $attr) {
   $selector = "gallery-{$instance}";
 
   $output = "<div id='$selector'><{$itemtag} class='masonry'>";
-  $output .= "<{$icontag} class='grid-sizer'></{$icontag}>";
+  $output .= "<{$icontag} class='grid-sizer-3'></{$icontag}>";
 
   // Iterate through the attachments in this gallery instance
   $counter = 1;
+  $pattern = 1;
   foreach ( $attachments as $id => $attachment ) {
       $img_width = wp_get_attachment_metadata( $id )["width"];
       $img_height = wp_get_attachment_metadata( $id )["height"];
       $img_class = '';
+      $img_class = 'grid-item-1-3';
+      
 
-      if (($counter - 1) % 3 == 0) {
-        $img_class = "grid-item--width3";
-      } 
-      else {
-        $img_class = "grid-item--width2";
-      }
+      // if (($counter - 1) % 3 == 0) {
+      //   $img_class = $pattern ? "grid-item--width5" : "grid-item-4-4";
+      // } 
+      // elseif ($img_height > $img_width) {
+      //   $img_class = $pattern ? "grid-item--width3" : "grid-item-2-4";
+      //   $counter--;
+      // }
+      // else {
+      //   $img_class = $pattern ? "grid-item--width2" : "grid-item-2-4";
+      // }
 
       $counter++;
 
@@ -203,7 +210,7 @@ function custom_post_gallery($output, $attr) {
 
       // icontag
       $output .= "
-      <{$icontag} class='grid-item {$img_class}'>
+      <{$icontag} class='grid-item-3 {$img_class}'>
           <img src={$link[0]}>
       </{$icontag}>";
 
