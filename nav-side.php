@@ -1,16 +1,16 @@
 <nav id="menu-side" role="navigation">
   <ul>
     <li>
-      <a href="#work">Work</a>
+      <a href="<?php echo get_home_url('/').'#work'; ?>">Work</a>
     </li>
     <li>
-      <a href="#services">Services</a>
+      <a href="<?php echo get_home_url('/').'#services'; ?>">Services</a>
     </li>
     <li>
-      <a href="#team">Team</a>
+      <a href="<?php echo get_home_url('/').'#team'; ?>">Team</a>
     </li>
     <li>
-      <a href="#contact">Contact</a>
+      <a href="<?php echo get_home_url('/').'#contact'; ?>">Contact</a>
     </li>
   </ul>
 </nav>

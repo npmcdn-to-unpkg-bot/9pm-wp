@@ -280,18 +280,20 @@ section#crew {
 .grid-item--width3 { width:  60%; }
 .grid-item--width5 { width:  100%; }
 
-/*.grid-item--height2 { height: 200px; }
+.grid-item--height2 { height: 200px; }
 .grid-item--height3 { height: 260px; }
-.grid-item--height4 { height: 360px; }*/
+.grid-item--height4 { height: 360px; }
 
 @media handheld, only screen and (max-width: 480px) {
+  [class^="grid-item-"] {width:  100%;}
   .grid-item--half { width:  100%; }
   .grid-item--width2 { width:  100%; }
   .grid-item--width3 { width:  100%; }
   .grid-item--width5 { width:  100%; }
 }
 
-.work-item {
+.work-item,
+.gallery-item {
   position: relative;
   display: block;
   padding: 0.5rem;

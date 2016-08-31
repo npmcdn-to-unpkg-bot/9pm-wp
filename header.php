@@ -9,20 +9,11 @@
 <body <?php body_class(); ?>>
   <div id="wrapper" class="hfeed">
     <header id="header" role="banner">
-      <nav id="menu-side" role="navigation">
-        <ul>
-          <li>
-            <a href="#work">Work</a>
-          </li>
-          <li>
-            <a href="#services">Services</a>
-          </li>
-          <li>
-            <a href="#team">Team</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
-      </nav>
+      <?php 
+        if (is_home()) {
+          get_template_part( 'nav', 'home' ); 
+        } else {
+          get_template_part( 'nav', 'side' ); 
+        }
+      ?>
     </header>

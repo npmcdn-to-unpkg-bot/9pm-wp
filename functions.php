@@ -191,7 +191,7 @@ function custom_post_gallery($output, $attr) {
       $img_width = wp_get_attachment_metadata( $id )["width"];
       $img_height = wp_get_attachment_metadata( $id )["height"];
       $img_class = '';
-      $img_class = 'grid-item-1-3';
+      $img_class = 'gallery-item grid-item-1-3';
       
 
       // if (($counter - 1) % 3 == 0) {
