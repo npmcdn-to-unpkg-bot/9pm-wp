@@ -51,7 +51,7 @@
             <?php endwhile; wp_reset_query(); ?>
         <?php else: ?>
         </div> <!-- end project grid -->
-          <h2><?php _e( 'Sorry, nothing to display yet.'); ?></h2>
+          <h2 style="background-color:#1D1D1F; color:#eee;" class="text-center"><?php _e( 'Sorry, nothing to display yet.'); ?></h2>
         <?php endif; ?>
       </div>
     </div>
@@ -190,8 +190,8 @@
   </ul>
 
   <div class="grid grid-pad" id="we-are">
-    <div class="col-1-3">
-      <div class="col-1-2 mobile-col-1-2 text-right">
+    <div class="col-1-3 block clearfix">
+      <div class="text-right">
         <h4>We are</h4>
       </div>
       <div class="col-1-2 mobile-col-1-2">
@@ -206,8 +206,8 @@
       </div>
     </div>
 
-    <div class="col-1-3">
-      <div class="col-1-2 mobile-col-1-2 text-right">
+    <div class="col-1-3 block clearfix">
+      <div class="text-right">
         <h4>We make</h4>
       </div>
       <div class="col-1-2 mobile-col-1-2">
@@ -222,8 +222,8 @@
       </div>
     </div>
 
-    <div class="col-1-3">
-      <div class="col-1-2 mobile-col-1-2 text-right">
+    <div class="col-1-3 block clearfix">
+      <div class="text-right">
         <h4>We love</h4>
       </div>
       <div class="col-1-2 mobile-col-1-2">

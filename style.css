@@ -55,7 +55,7 @@ a:visited {
 .text-left {text-align: left}
 .text-right {text-align: right}
 
-/* */
+/* side menu */
 #menu-side {
   position: fixed;
   right: -100%;
@@ -390,8 +390,18 @@ section#crew {
 
 #we-are {margin-top: 2rem;}
 
+#we-are [class^="col-"] {
+  overflow: hidden;
+}
+
+#we-are .block {
+  margin-bottom: 1rem;
+}
+
 #we-are .text-right {
   padding-right: 2rem;
+  max-width: 5rem;
+  float: left; 
 }
 
 #we-are h4 {
