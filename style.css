@@ -422,6 +422,10 @@ footer #copyright {}
   position: relative;
 }
 
+.project-description {
+  padding-bottom: 1rem;
+}
+
 .project-description>p {
   margin: 0.75rem 0;
 }
