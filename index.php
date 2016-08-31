@@ -40,7 +40,7 @@
           if ($query->have_posts()): while ($query->have_posts()) : $query->the_post();
         ?>
 
-        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="grid-item  work-item grid-item--width3">
+        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="grid-item work-item grid-item--half">
           <div class="work-overlay"><h3><?php the_title(); ?></h3></div>
           <?php if ( has_post_thumbnail()) : // Check if thumbnail exists
               the_post_thumbnail('cover'); // Declare pixel size you need inside the array
