@@ -19,6 +19,47 @@
 
 <!-- work section -->
 <section id="work">
+  <a name="work"></a>
+  <div class="grid grid-pad">
+    <div class="col-1-1 mobile-col-1-1">
+      <h1>Featured Work</h1>
+    </div>
+    <div class="col-1-1 mobile-col-1-1">
+      <div class="masonry" id="work-container">
+        <div class="grid-sizer"></div>
+        <?php
+          $args=array(
+            'post_type' => 'project',
+            'post_status' => 'publish',
+            'posts_per_page' => -1,
+            'caller_get_posts'=> 1,
+            'order' => 'DESC',
+            'orderby' => 'date'
+          );
+          $query = new WP_Query($args);
+          if ($query->have_posts()): while ($query->have_posts()) : $query->the_post();
+        ?>
+
+        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="grid-item  work-item grid-item--width3">
+          <div class="work-overlay"><h3><?php the_title(); ?></h3></div>
+          <?php if ( has_post_thumbnail()) : // Check if thumbnail exists
+              the_post_thumbnail('cover'); // Declare pixel size you need inside the array
+          else: ?>
+          <img src="http://placehold.it/450x450">
+          <?php endif; ?>
+        </a>
+            <?php endwhile; wp_reset_query(); ?>
+        <?php else: ?>
+        </div> <!-- end project grid -->
+          <h2><?php _e( 'Sorry, nothing to display yet.'); ?></h2>
+        <?php endif; ?>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section id="work">
   <div class="grid grid-pad">
     <div class="col-1-1 mobile-col-1-1">
       <h1>Featured Work</h1>
@@ -53,11 +94,12 @@
       </div>
   </div>
   </div>
-</section>
+</section> -->
 <!-- end work section -->
 
 <!-- services section -->
 <section id="services">
+  <a name="services"></a>
   <div class="grid grid-pad">
     <div class="col-1-1 mobile-col-1-1">
       <h1>What We Do</h1>
@@ -82,6 +124,7 @@
 
 <!-- crew section -->
 <section id="crew">
+  <a name="team"></a>
   <div class="grid grid-pad">
     <div class="col-1-1 mobile-col-1-1">
       <h1>Our Crew</h1>

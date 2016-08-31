@@ -17,5 +17,17 @@ $(document).ready(function(){
     });
   });
 
-  $('.menu-trigger').click(function(e){ $(this).toggleClass('is-open') });
+  $('.menu-trigger').click(function(e){ 
+    e.preventDefault(); 
+    toggleMenu();
+  });
+
+  $('#menu-side>ul>li>a').click(function(e){
+    toggleMenu();
+  });
 });
+
+function toggleMenu() {
+  $('.menu-trigger').toggleClass('is-open');
+  $('#menu-side').toggleClass('is-open');
+}
